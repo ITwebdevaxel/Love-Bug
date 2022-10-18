@@ -1,0 +1,350 @@
+////INDEX-HEART.HTML////
+
+<!DOCTYPE html>	
+<!-- Created By Axel Jon J. Bico -->
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart</title>
+	<link rel="stylesheet" href="style-heart.css">
+</head>
+<body>
+	<!--HOME SECTION-->
+<section class="home">
+	<div class="max-width">
+		<div class="home-content">
+			<a href="heart.html">
+				<button>CLICK ME</button>
+			</a>
+		</div>
+	</div>
+</section>
+<!-- footer section start -->
+    <footer>
+        <span>Created By: <a href="#">Axel Jon J. Bico</a> | <span class="far fa-copyright"></span> 2022 All rights reserved.</span>
+    </footer>
+
+</body>
+</html>
+
+
+
+////STYLE-HEART.CSS////
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500&display=swap');
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	text-orientation: none;
+}
+
+.home{
+	background: linear-gradient(to right, #59c173, #a17fe0, #5d26c1); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	display: flex;
+	align-content: center;
+	height: 90vh;
+	color: #191970;
+	min-height: 300px;
+	font-family: 'Ubuntu', sans-serif;
+}
+.home .max-width{
+	margin: auto;
+}
+
+
+/* Style for button */
+
+button, button::after {
+ cursor: pointer;
+ padding: 16px 20px;
+ font-size: 18px;
+ background: linear-gradient(45deg, transparent 5%, #ff013c 5%);
+ border: 0;
+ color: #fff;
+ letter-spacing: 3px;
+ line-height: 1;
+ box-shadow: 6px 0px 0px #00e6f6;
+ outline: transparent;
+ position: relative;
+}
+
+button::after {
+ --slice-0: inset(50% 50% 50% 50%);
+ --slice-1: inset(80% -6px 0 0);
+ --slice-2: inset(50% -6px 30% 0);
+ --slice-3: inset(10% -6px 85% 0);
+ --slice-4: inset(40% -6px 43% 0);
+ --slice-5: inset(80% -6px 5% 0);
+ content: "HOVER ME";
+ display: block;
+ position: absolute;
+ top: 0;
+ left: 0;
+ right: 0;
+ bottom: 0;
+ background: linear-gradient(45deg, transparent 3%, #00e6f6 3%, #00e6f6 5%, #ff013c 5%);
+ text-shadow: -3px -3px 0px #f8f005, 3px 3px 0px #00e6f6;
+ clip-path: var(--slice-0);
+}
+
+button:hover::after {
+ animation: 1s glitch;
+ animation-timing-function: steps(2, end);
+}
+
+@keyframes glitch {
+ 0% {
+  clip-path: var(--slice-1);
+  transform: translate(-20px, -10px);
+ }
+
+ 10% {
+  clip-path: var(--slice-3);
+  transform: translate(10px, 10px);
+ }
+
+ 20% {
+  clip-path: var(--slice-1);
+  transform: translate(-10px, 10px);
+ }
+
+ 30% {
+  clip-path: var(--slice-3);
+  transform: translate(0px, 5px);
+ }
+
+ 40% {
+  clip-path: var(--slice-2);
+  transform: translate(-5px, 0px);
+ }
+
+ 50% {
+  clip-path: var(--slice-3);
+  transform: translate(5px, 0px);
+ }
+
+ 60% {
+  clip-path: var(--slice-4);
+  transform: translate(5px, 10px);
+ }
+
+ 70% {
+  clip-path: var(--slice-2);
+  transform: translate(-10px, 10px);
+ }
+
+ 80% {
+  clip-path: var(--slice-5);
+  transform: translate(20px, -10px);
+ }
+
+ 90% {
+  clip-path: var(--slice-1);
+  transform: translate(-10px, 0px);
+ }
+
+ 100% {
+  clip-path: var(--slice-1);
+  transform: translate(0);
+ }
+}
+
+a{
+	color: white;
+	text-decoration: none;
+}
+
+/* footer section styling */
+footer{
+    background: #191970;
+    padding: 30px 30px;
+    color: white;
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+}
+footer span a{
+    color: white;
+    text-decoration: none;
+}
+footer span a:hover{
+    text-decoration: none;
+    color: crimson;
+}
+
+
+////HEART.html////
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="heart.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+	<title>I Love You</title>
+</head>
+<body>
+<!--HOME SECTION-->
+<section class="heart" id="heart">
+	<div class="wrapper">
+		<div class="card">
+			<p id ="question">Do you love Me?<p>
+			<button class="btn" id="yes">YES</button>
+			<button class="btn" id="no">NO</button>
+				<div class="option">
+					<a href="index-heart.html">
+						 <button>Back</button>
+					</a>
+				</div>
+		</div>
+	</div>
+</section>
+<!--Function-->
+<script type="text/javascript">
+	const noBtn = document.getElementById('no');
+	const yesBtn = document.getElementById('yes');
+	const question = document.getElementById('question');
+	noBtn.addEventListener("click", ()=>{
+		let rand = Math.floor(Math.random() * (400-90) + 1);
+		let rand2 = Math.floor(Math.random() * (-200-100) + 1);
+		noBtn.style.transform = "translate("+rand+"px, "+rand2+"px)"
+	});
+	yesBtn.addEventListener("click", ()=>{
+		question.innerHTML="Ayee, I Love You"
+	});
+</script>
+</body>
+<!-- footer section start -->
+    <footer>
+        <span>Created By: <a href="#">Axel Jon J. Bico</a> | <span class="far fa-copyright"></span> 2022 All rights reserved.</span>
+    </footer>
+</html>
+
+
+
+////HEART.CSS////
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500&display=swap');
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	text-orientation: none;
+}
+
+section .heart{
+	margin: auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.button {
+    justify-content: space-between;
+}
+
+.wrapper{
+    padding: 150px;
+	background: linear-gradient(to right, #59c173, #a17fe0, #5d26c1); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+	color: #191970;
+	height: 90vh;
+	font-family: 'Ubuntu', sans-serif;
+}
+
+/* From uiverse.io by @Sujitkavaiya */
+.card{
+ margin: auto;
+ padding: 20px 20px 20px 90px;
+ display: fixed;
+ align-items: center;
+ justify-content: space-between;
+ width: 390px;
+ height: 300px;
+ background: rgb(255, 255, 255);
+ border-radius: 0.4em;
+ box-shadow: 0.3em 0.3em 0.7em #ffffff15;
+ transition: border 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+ border: rgb(250, 250, 250) 0.2em solid;
+}
+
+.card:hover {
+ border: #006fff 0.2em solid;
+}
+
+.card p{
+	font-size: 30px;
+	align-items: center;
+	justify-content: space-between;
+	margin-top: 40px;
+	margin-bottom: 5px;
+}
+
+.card .option{
+	padding-top: 5px;
+	padding-left: 40px;
+}
+
+/* Style for buttons */
+/* From uiverse.io by @nikk7007 */
+button {
+ cursor: pointer;
+ padding: 0.8em 1.8em;
+ border: 2px solid #17C3B2;
+ position: relative;
+ overflow: hidden;
+ background-color: transparent;
+ text-align: center;
+ text-transform: uppercase;
+ font-size: 16px;
+ transition: .3s;
+ z-index: 1;
+ font-family: inherit;
+ color: #343434;
+}
+
+button::before {
+ content: '';
+ width: 0;
+ height: 300%;
+ position: absolute;
+ top: 50%;
+ left: 50%;
+ transform: translate(-50%, -50%) rotate(45deg);
+ background: crimson;
+ transition: .5s ease;
+ display: block;
+ z-index: -1;
+}
+
+button:hover::before {
+ width: 105%;
+}
+
+button:hover {
+ color: white;
+}
+
+.yes {
+	padding-bottom: 100px;
+}
+
+/* footer section styling */
+footer{
+    background: #191970;
+    padding: 30px 30px;
+    color: white;
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+}
+footer span a{
+    color: white;
+    text-decoration: none;
+}
+footer span a:hover{
+    text-decoration: none;
+    color: crimson;
+}
+
+
